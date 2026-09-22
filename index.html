@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23090d16'/%3E%3Cpath d='M8 11L4 16L8 21' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M24 11L28 16L24 21' stroke='%23818cf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18 9L14 23' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
     <style>
         :root {
             --bg: #090d16;
@@ -67,16 +68,46 @@
         }
 
         .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .brand:hover {
+            transform: scale(1.02);
+        }
+
+        .brand-logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 16px rgba(56, 189, 248, 0.18);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--primary);
+        }
+
+        .brand:hover .brand-logo-icon {
+            border-color: rgba(56, 189, 248, 0.7);
+            box-shadow: 0 0 24px rgba(56, 189, 248, 0.45);
+            transform: rotate(6deg) scale(1.05);
+            color: #fff;
+        }
+
+        .brand-text {
             font-weight: 800;
             font-size: 1.25rem;
             letter-spacing: -0.5px;
             color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .brand span {
+        .brand-text span {
             color: var(--primary);
         }
 
@@ -391,7 +422,15 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="brand">Ky<span>.</span>Sopheareak</div>
+            <a href="#about" class="brand" aria-label="Ky Sopheareak - Home">
+                <div class="brand-logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <div class="brand-text">Ky<span>.</span>Sopheareak</div>
+            </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
